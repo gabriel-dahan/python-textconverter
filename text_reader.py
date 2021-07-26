@@ -3,7 +3,7 @@ from gtts import gTTS
 from playsound import playsound
 
 import multiprocessing
-from typing import Text, Union
+from typing import Union
 import random
 import os
 
@@ -17,8 +17,7 @@ class TextConverter(object):
     def __init__(self, text: Union[str, TextIOWrapper]):
         if isinstance(text, TextIOWrapper):
             text = text.read()
-        text = text.replace('\n', ' ')
-        self.text = text
+        self.text = text.replace('\n', ' ')
 
     def toaudiofile(self, out_file: str, lang: str = 'en', slow: bool = False):
         sp = gTTS(self.text, lang = lang, slow = slow)
