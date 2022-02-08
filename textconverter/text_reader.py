@@ -9,8 +9,7 @@ import os
 
 def random_name(length: int):
     abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-    name = ''.join(random.sample(abc, length))
-    return name
+    return ''.join(random.sample(abc, length))
 
 class TextConverter(object):
 
